@@ -1,7 +1,12 @@
+// Psuedo Code
+// Set timer
+// questions
+// scoreboard
+
 var questions = [
     {
     question: "What does HTML stand for?",
-    answer: "Hyper Text Markup Language",
+    answers: "Hyper Text Markup Language",
     options: [
         "Hyper Text Preprocessor",
         "Hyper Text Markup Language",
@@ -11,7 +16,7 @@ var questions = [
     },
     {
     question: "What does CSS stand for?",
-    answer: "Cascading Style Sheet",
+    answers: "Cascading Style Sheet",
     options: [
         "Common Style Sheet",
         "Colorful Style Sheet",
@@ -22,7 +27,7 @@ var questions = [
     {
 
     question: "Which do you use for an array ?",
-    answer: "brackets",
+    answers: "brackets",
     options: [
         "commas",
         "paranthesis",
@@ -33,7 +38,7 @@ var questions = [
     {
 
     question: "What does SQL stand for?",
-    answer: "Structured Query Language",
+    answers: "Structured Query Language",
     options: [
         "Stylish Question Language",
         "Stylesheet Query Language",
@@ -44,7 +49,7 @@ var questions = [
     {
 
     question: "Strings can be stored in _____ ?",
-    answer: "quotes",
+    answers: "quotes",
     options: [
         "commas",
         "paranthesis",
@@ -55,5 +60,18 @@ var questions = [
 
 var startButton = document.getElementById('start-btn')
 var nextButton = document.getElementById('next-btn')
+var questionContainer = document.getElementById('question-container')
+var question = document.getElementById('question')
+var answers = document.getElementById('answer-buttons')
 
 
+addEventListener('click' , startGame)
+
+function startGame(){
+    startButton.classList.add('hide')
+    questionContainer.classList.remove('hide')
+};
+
+function showQuestion(question) {
+    question.innerText = question[0].question
+}
